@@ -23,16 +23,24 @@ on:
 
 
 env:
-  SUBSCRIPTION: "${{ github.event.inputs.Subscription }}"
-  RESOURCEGROUP: "${{ github.event.inputs.ResourceGroup }}"
+  SOURCE_SUBSCRIPTION: "${{ github.event.inputs.Subscription }}"
+  SOURCE_RESOURCEGROUP: "${{ github.event.inputs.ResourceGroup }}"
+  REQUESTOREMAIL: "${{ github.event.inputs.requestor }}"
  
 jobs:
-
-  Build:
-   
-   runs-on: Windows-latest  
-   steps:
+  GET_DETAILS_FROM_AZURE:
+    runs-on: ubuntu-latest
+    outputs:
+      osType: ${{ steps.vm_details.outputs.osType }}
+      resourceGroup: ${{ steps.vm_details.outputs.resourceGroup }}
+      region: ${{ steps.vm_details.outputs.region }}
+      serverType: ${{ steps.vm_details.outputs.serverType }}
+    steps:
       - uses: actions/checkout@v2
-      - name: "powershell task"
-        run:  echo "welcome"
-   
+      
+      - name: "source subscription is equal to target subscription"
+        id: HARDCODE
+        if: ${{   }}
+        
+        
+        
