@@ -1,0 +1,17 @@
+name: Pratics
+
+
+on: 
+  workflow_dispatch:
+  
+jobs:
+
+ Build:
+  
+  runs-on: Windows-latest
+   
+  steps:
+   - uses: actions/checkout@v3
+   - name: powershell task
+      echo "Ashok welcome to Github action"
+  
