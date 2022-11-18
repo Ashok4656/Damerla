@@ -12,6 +12,7 @@ jobs:
    
   steps:
    - uses: actions/checkout@v3
+   
    - name: powershell task
-      echo "Ashok welcome to Github action"
+     run: echo "Ashok welcome to Github action"
   
